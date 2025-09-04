@@ -1,0 +1,5 @@
+pip==25.0.1
+
+python-dotenv
+
+discord.py==2.6.3
