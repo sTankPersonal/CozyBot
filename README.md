@@ -14,6 +14,11 @@
 - Moderation
   - Members
     - Member Joins the Server
-    -  Member Leaves the Server
+    - Member Leaves the Server
   - Message
     - WIP
+
+## Local Development:
+You must create a .env with `BOT_TOKEN=YourTwentyDigetDiscordToken`  
+Then run the Docker command:  
+```docker compose -f docker-compose-dev.yml up```
