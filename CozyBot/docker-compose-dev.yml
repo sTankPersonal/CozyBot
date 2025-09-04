@@ -1,0 +1,11 @@
+services:
+  cozybot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: python CozyBot.py
+    restart: unless-stopped

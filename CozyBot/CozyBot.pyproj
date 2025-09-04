@@ -26,8 +26,11 @@
     <Compile Include="cogs\moderation\messages.py" />
     <Compile Include="config\settings.py" />
     <Compile Include="CozyBot.py" />
+    <Compile Include="entities\message.py" />
+    <Compile Include="entities\server.py" />
     <Compile Include="utils\builders\embed_builder.py" />
     <Compile Include="utils\builders\intent_builder.py" />
+    <Compile Include="value_models\embed.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -41,9 +44,9 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".dockerfile" />
     <Content Include=".dockerignore" />
     <Content Include=".env" />
+    <Content Include="docker-compose-dev.yml" />
     <Content Include="Dockerfile" />
     <Content Include="requirements.txt" />
   </ItemGroup>
@@ -51,6 +54,8 @@
     <Folder Include="cogs\" />
     <Folder Include="cogs\moderation\" />
     <Folder Include="config\" />
+    <Folder Include="entities\" />
+    <Folder Include="value_models\" />
     <Folder Include="utils\" />
     <Folder Include="utils\builders\" />
   </ItemGroup>

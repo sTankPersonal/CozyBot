@@ -1,5 +1,4 @@
-pip==25.0.1
-
-python-dotenv
+pip==25.2
 
 discord.py==2.6.3
+SQLAlchemy==2.0.43

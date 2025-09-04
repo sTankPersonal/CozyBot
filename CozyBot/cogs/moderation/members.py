@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from datetime import datetime
-from utils.embed_builder import EmbedBuilder
+from utils.builders.embed_builder import EmbedBuilder
 from cogs.moderation import messages
 
 class MemberEvents(commands.Cog):
@@ -63,5 +63,5 @@ class MemberEvents(commands.Cog):
             embed_builder.set_timestamp(datetime.utcnow())
             await channel.send(embed=embed_builder.build())
 
-def setup(bot):
-    bot.add_cog(MemberEvents(bot))
+async def setup(bot):
+    await bot.add_cog(MemberEvents(bot))
