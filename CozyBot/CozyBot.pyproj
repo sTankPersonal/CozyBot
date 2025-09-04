@@ -26,7 +26,8 @@
     <Compile Include="cogs\moderation\messages.py" />
     <Compile Include="config\settings.py" />
     <Compile Include="CozyBot.py" />
-    <Compile Include="utils\embed_builder.py" />
+    <Compile Include="utils\builders\embed_builder.py" />
+    <Compile Include="utils\builders\intent_builder.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -51,6 +52,7 @@
     <Folder Include="cogs\moderation\" />
     <Folder Include="config\" />
     <Folder Include="utils\" />
+    <Folder Include="utils\builders\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
