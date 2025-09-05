@@ -26,11 +26,17 @@
     <Compile Include="cogs\moderation\messages.py" />
     <Compile Include="config\settings.py" />
     <Compile Include="CozyBot.py" />
-    <Compile Include="entities\message.py" />
-    <Compile Include="entities\server.py" />
+    <Compile Include="Domain\Entities\AbstractBase.py" />
+    <Compile Include="Domain\Entities\Message.py" />
+    <Compile Include="Domain\Entities\Server.py" />
+    <Compile Include="Domain\Enums\MessageType.py" />
+    <Compile Include="Infrastructure\Data\AppDbEngine.py" />
+    <Compile Include="Infrastructure\Repositories\EmbedFieldRepository.py" />
+    <Compile Include="Infrastructure\Repositories\MessageRepository.py" />
+    <Compile Include="Infrastructure\Repositories\ServerRepository.py" />
     <Compile Include="utils\builders\embed_builder.py" />
     <Compile Include="utils\builders\intent_builder.py" />
-    <Compile Include="value_models\embed.py" />
+    <Compile Include="Domain\Entities\EmbedField.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -54,8 +60,12 @@
     <Folder Include="cogs\" />
     <Folder Include="cogs\moderation\" />
     <Folder Include="config\" />
-    <Folder Include="entities\" />
-    <Folder Include="value_models\" />
+    <Folder Include="Domain\Entities\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\Enums\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\Data\" />
+    <Folder Include="Infrastructure\Repositories\" />
     <Folder Include="utils\" />
     <Folder Include="utils\builders\" />
   </ItemGroup>
