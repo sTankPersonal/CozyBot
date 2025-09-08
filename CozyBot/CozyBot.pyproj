@@ -22,14 +22,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="cogs\moderation\members.py" />
-    <Compile Include="cogs\moderation\messages.py" />
-    <Compile Include="config\settings.py" />
+    <Compile Include="Domain\Services\ValidateSettingsService.py" />
+    <Compile Include="Interface\EventHandlers\GuildEvents.py" />
+    <Compile Include="Interface\EventHandlers\MemberEvents.py" />
+    <Compile Include="Interface\EventHandlers\MessageEvents.py" />
+    <Compile Include="Config\Settings.py" />
     <Compile Include="CozyBot.py" />
     <Compile Include="Domain\Entities\AbstractBase.py" />
     <Compile Include="Domain\Entities\Message.py" />
     <Compile Include="Domain\Entities\Server.py" />
     <Compile Include="Domain\Enums\MessageType.py" />
+    <Compile Include="Domain\Services\DiscordEmbedService.py" />
+    <Compile Include="Domain\Services\DiscordIntentService.py" />
     <Compile Include="Infrastructure\Data\AppDbEngine.py" />
     <Compile Include="Infrastructure\Repositories\EmbedFieldRepository.py" />
     <Compile Include="Infrastructure\Repositories\MessageRepository.py" />
@@ -57,15 +61,16 @@
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="cogs\" />
-    <Folder Include="cogs\moderation\" />
-    <Folder Include="config\" />
+    <Folder Include="Config\" />
     <Folder Include="Domain\Entities\" />
     <Folder Include="Domain\" />
     <Folder Include="Domain\Enums\" />
+    <Folder Include="Domain\Services\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Infrastructure\Data\" />
     <Folder Include="Infrastructure\Repositories\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Interface\EventHandlers\" />
     <Folder Include="utils\" />
     <Folder Include="utils\builders\" />
   </ItemGroup>

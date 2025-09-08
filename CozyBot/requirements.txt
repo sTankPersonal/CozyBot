@@ -1,4 +1,5 @@
 pip==25.2
 
 discord.py==2.6.3
+psycopg2==2.9.10
 SQLAlchemy==2.0.43

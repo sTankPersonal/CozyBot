@@ -2,8 +2,8 @@ from Domain.Entities.Server import Server
 from Infrastructure.Data.AppDbEngine import AppDbEngine
 
 class ServerRepository:
-    def __init__(self, connection_string):
-        self.db_engine = AppDbEngine(connection_string)
+    def __init__(self):
+        self.db_engine = AppDbEngine()
 
     def get_all(self):
         with self.db_engine.session_scope() as session:

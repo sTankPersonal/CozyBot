@@ -1,9 +1,13 @@
 from discord.ext import commands
+import discord
 import asyncio
 import logging
 
-from config import settings
-from utils.builders.intent_builder import IntentBuilder
+from Config import Settings
+from Domain.Services.ValidateSettingsService import ValidateSettingsService 
+
+# Validate settings at startup
+ValidateSettingsService.validate(Settings.__dict__)
 
 # Configure logging
 logging.basicConfig(
@@ -11,25 +15,21 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
 )
 
-intents = (
-    IntentBuilder()
-    .enable_default()
-    .members(True)
-    .message_content(True)
-    .build()
-)
+# Directly configure intents
+intents = discord.Intents.default()
+intents.members = True
+intents.message_content = True
 
-bot = commands.Bot(command_prefix=settings.PREFIX, intents=intents)
+bot = commands.Bot(command_prefix=Settings.PREFIX, intents=intents)
 
 async def main():
     # Load extensions asynchronously
-    await bot.load_extension('cogs.moderation.members')
-    await bot.load_extension('cogs.moderation.messages')
+    await bot.load_extension('Interface.EventHandlers.MemberEvents')
+    await bot.load_extension('Interface.EventHandlers.MessageEvents')
+    await bot.load_extension('Interface.EventHandlers.GuildEvents')
     # Start the bot
-    await bot.start(settings.TOKEN)
+    await bot.start(Settings.TOKEN)
     logging.info("Bot has started.")
-
-
 
 if __name__ == "__main__":
     asyncio.run(main())

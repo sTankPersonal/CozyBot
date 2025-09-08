@@ -2,12 +2,17 @@ from Infrastructure.Data.AppDbEngine import AppDbEngine
 from Domain.Entities.Message import Message
 
 class MessageRepository:
-    def __init__(self, connection_string):
-        self.db_engine = AppDbEngine(connection_string)
+    def __init__(self):
+        self.db_engine = AppDbEngine()
 
-    def get_all(self):
+    def get_all(self, server_id = None, messageType = None):
         with self.db_engine.session_scope() as session:
-            return session.query(Message).all()
+            query = session.query(Message)
+            if server_id is not None:
+                query = query.filter(Message.server_id == server_id)
+            if messageType is not None:
+                query = query.filter(Message.message_type == messageType)
+            return query.all()
 
     def get(self, message_id):
         with self.db_engine.session_scope() as session:
@@ -26,3 +31,4 @@ class MessageRepository:
             message = session.query(Message).get(message_id)
             if message:
                 session.delete(message)
+

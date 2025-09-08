@@ -1,9 +1,11 @@
-from typing import List
+from typing import List, TYPE_CHECKING
 from sqlalchemy import String
-from sqlalchemy.orm import  Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from Domain.Entities.Message import Message
 from Domain.Entities.AbstractBase import Base
+
+if TYPE_CHECKING:
+    from Domain.Entities.Message import Message
 
 
 class Server(Base):
