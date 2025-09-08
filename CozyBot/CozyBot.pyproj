@@ -26,6 +26,7 @@
     <Compile Include="Domain\Entities\__init__.py" />
     <Compile Include="Domain\Services\ValidateSettingsService.py" />
     <Compile Include="Infrastructure\Migrations\env.py" />
+    <Compile Include="Interface\CommandHandlers\EmbedCommands.py" />
     <Compile Include="Interface\EventHandlers\GuildEvents.py" />
     <Compile Include="Interface\EventHandlers\MemberEvents.py" />
     <Compile Include="Interface\EventHandlers\MessageEvents.py" />
@@ -79,6 +80,7 @@
     <Folder Include="Infrastructure\Repositories\" />
     <Folder Include="Interface\" />
     <Folder Include="Interface\EventHandlers\" />
+    <Folder Include="Interface\CommandHandlers\" />
     <Folder Include="utils\" />
     <Folder Include="utils\builders\" />
   </ItemGroup>

@@ -11,7 +11,7 @@ TOKEN = os.getenv("BOT_TOKEN")
 DB_CONNECTION_STRING = os.getenv("DB_CONNECTION_STRING")
 
 # Optional environment variable for command prefix
-PREFIX = os.getenv("PREFIX", "!cozy") 
+PREFIX = os.getenv("PREFIX", "!cozy ") 
 
 # Optional environment variable for bot name displayed in embeds
 BOT_NAME = os.getenv("BOT_NAME", "CozyBot")

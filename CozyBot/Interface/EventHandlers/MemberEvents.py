@@ -21,9 +21,9 @@ class MemberEvents(commands.Cog):
         
         embed = None
         if len(messages_list) > 0:
-            embed = DiscordEmbedService.create_embed(random.choice(messages_list))
+            embed = DiscordEmbedService().create_embed(random.choice(messages_list))
         else:
-            embed = DiscordEmbedService.create_error_embed(404, "No welcome message could be found.")
+            embed = DiscordEmbedService().create_error_embed(404, "No welcome message could be found.")
         
         await channel.send(embed=embed)
 
@@ -36,9 +36,9 @@ class MemberEvents(commands.Cog):
         
         embed = None
         if len(messages_list) > 0:
-            embed = DiscordEmbedService.create_embed(random.choice(messages_list))
+            embed = DiscordEmbedService().create_embed(random.choice(messages_list))
         else:
-            embed = DiscordEmbedService.create_error_embed(404, "No farewell message could be found.")
+            embed = DiscordEmbedService().create_error_embed(404, "No farewell message could be found.")
         
         await channel.send(embed=embed)
 

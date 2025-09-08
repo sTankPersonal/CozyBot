@@ -9,9 +9,13 @@ class ServerRepository:
         with self.db_engine.session_scope() as session:
             return session.query(Server).all()
 
-    def get(self, server_id):
+    def get(self, id):
         with self.db_engine.session_scope() as session:
-            return session.query(Server).get(server_id)
+            return session.query(Server).get(id)
+
+    def get_by_discord_id(self, discord_id):
+        with self.db_engine.session_scope() as session:
+            return session.query(Server).filter_by(discord_id=str(discord_id)).first()
 
     def add(self, server: Server):
         with self.db_engine.session_scope() as session:
@@ -26,3 +30,4 @@ class ServerRepository:
             server = session.query(Server).get(server_id)
             if server:
                 session.delete(server)
+
