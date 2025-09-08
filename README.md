@@ -19,6 +19,13 @@
     - WIP
 
 ## Local Development:
-You must create a .env with `BOT_TOKEN=YourTwentyDigetDiscordToken`  
+You must create a .env with  
+  - ```'BOT_TOKEN=YourTwentyDigetDiscordToken'```  
+  and 
+  - ```'DB_CONNECTION_STRING'=postgresql+psycopg2://<Your database connection string>```  
 Then run the Docker command:  
-```docker compose -f docker-compose-dev.yml up```
+- ```docker compose -f docker-compose-dev.yml up```
+
+To update the migrations:  
+- ```alembic revision --autogenerate -m "<Migration message>"```  
+- ```alembic upgrade head```  
