@@ -6,6 +6,7 @@ from Domain.Services.DiscordEmbedService import DiscordEmbedService
 class GuildEvents(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        print("GuildEvents cog loaded")
 
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
@@ -20,9 +21,10 @@ class GuildEvents(commands.Cog):
         await guild.system_channel.send(embed=embed)
 
     @commands.command(name="testguild")
-    @commands.has_permissions(administrator=True)
+    #@commands.has_permissions(administrator=True)
     async def test_guild(self, ctx):
         """Manually test the on_guild_join logic."""
+        print("Testing guild join logic...")
         guild = ctx.guild
         if not ServerRepository().get(guild.id):
             new_server = Server(id=guild.id, name=guild.name)
@@ -33,6 +35,10 @@ class GuildEvents(commands.Cog):
             color=0x00FF00
         )
         await ctx.send(embed=embed)
+
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        print(f"Command error: {error}")
 
 async def setup(bot):
     await bot.add_cog(GuildEvents(bot))

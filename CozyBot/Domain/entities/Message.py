@@ -13,7 +13,7 @@ class Message(Base):
     __tablename__ = 'messages'
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    server_id: Mapped[int] = mapped_column(ForeignKey("server.id"))
+    server_id: Mapped[int] = mapped_column(ForeignKey("servers.id"))
     server: Mapped["Server"] = relationship("Server", back_populates="messages")
 
     message_type: Mapped[MessageType] = mapped_column(Enum(MessageType), nullable=False)

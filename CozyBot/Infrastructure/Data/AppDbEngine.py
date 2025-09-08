@@ -18,6 +18,7 @@ class AppDbEngine:
             return
         self.engine = create_engine(DB_CONNECTION_STRING, echo=True)
         self.SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
+
         self._initialized = True
 
     @contextmanager

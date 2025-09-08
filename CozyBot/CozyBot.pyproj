@@ -12,6 +12,7 @@
     <Name>CozyBot</Name>
     <RootNamespace>CozyBot</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Domain\Entities\__init__.py" />
     <Compile Include="Domain\Services\ValidateSettingsService.py" />
+    <Compile Include="Infrastructure\Migrations\env.py" />
     <Compile Include="Interface\EventHandlers\GuildEvents.py" />
     <Compile Include="Interface\EventHandlers\MemberEvents.py" />
     <Compile Include="Interface\EventHandlers\MessageEvents.py" />
@@ -38,6 +41,7 @@
     <Compile Include="Infrastructure\Repositories\EmbedFieldRepository.py" />
     <Compile Include="Infrastructure\Repositories\MessageRepository.py" />
     <Compile Include="Infrastructure\Repositories\ServerRepository.py" />
+    <Compile Include="Interface\EventHandlers\ModerationEvents.py" />
     <Compile Include="utils\builders\embed_builder.py" />
     <Compile Include="utils\builders\intent_builder.py" />
     <Compile Include="Domain\Entities\EmbedField.py" />
@@ -58,6 +62,8 @@
     <Content Include=".env" />
     <Content Include="docker-compose-dev.yml" />
     <Content Include="Dockerfile" />
+    <Content Include="Infrastructure\Migrations\README" />
+    <Content Include="Infrastructure\Migrations\script.py.mako" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +74,8 @@
     <Folder Include="Domain\Services\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Infrastructure\Data\" />
+    <Folder Include="Infrastructure\Migrations\" />
+    <Folder Include="Infrastructure\Migrations\versions\" />
     <Folder Include="Infrastructure\Repositories\" />
     <Folder Include="Interface\" />
     <Folder Include="Interface\EventHandlers\" />

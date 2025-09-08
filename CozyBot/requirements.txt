@@ -1,5 +1,6 @@
 pip==25.2
 
 discord.py==2.6.3
-psycopg2==2.9.10
+psycopg2==2.9.10		# Requirement for SQLAlchemy with PostgreSQL
 SQLAlchemy==2.0.43
+alembic==1.16.5			# For database migrations

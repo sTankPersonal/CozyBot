@@ -27,9 +27,9 @@ async def main():
     await bot.load_extension('Interface.EventHandlers.MemberEvents')
     await bot.load_extension('Interface.EventHandlers.MessageEvents')
     await bot.load_extension('Interface.EventHandlers.GuildEvents')
+    await bot.load_extension('Interface.EventHandlers.ModerationEvents')
     # Start the bot
     await bot.start(Settings.TOKEN)
-    logging.info("Bot has started.")
 
 if __name__ == "__main__":
     asyncio.run(main())
